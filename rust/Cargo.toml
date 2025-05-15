@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [lib]
-crate-type = ["cdylib", "staticlib"]
+crate-type = ["rlib", "cdylib", "staticlib"]
 
 [dependencies]
 flutter_rust_bridge = "=2.9.0"
@@ -30,6 +30,7 @@ tracing = "0.1"
 tracing-subscriber = {version = "0.3", features = ["env-filter", "fmt", "json"]}
 
 libsqlite3-sys = { version = "0.28", features = ["bundled-sqlcipher-vendored-openssl"] }
+candle-core = { git = "https://github.com/huggingface/candle.git", version = "0.9.1" }
 
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(frb_expand)'] }
