@@ -5,7 +5,7 @@ on:
   workflow_call:
   push:
     tags:
-      - invtracker-v*
+      - invoice_tracker-v*
 
 permissions:
   contents: write
@@ -41,7 +41,7 @@ jobs:
         with:
           path: ./**/*.apk
       - name: Create Release
-        if: startsWith(github.ref_name, 'invtracker-v')
+        if: startsWith(github.ref_name, 'invoice_tracker-v')
         uses: softprops/action-gh-release@v2
         with:
           files: ./*.apk
